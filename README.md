@@ -1,25 +1,28 @@
 
 ## Phase transitions in Hopfield Networks
 
-The main objetive of this code is to test the abilities of Hopfield Networks to retain information (memories) as a function of their size $N$. Hopfield Networks are artificial neural networks that can be trained using **associative memories mechanisms** to recover memories aftyer being "corrupted" by noise and have numerous applications in pattern recognition and optimization problems. 
+The main objective of this code is to explore the behavior of Hopfield Networks in retaining information (memories) relative to their size \( N \). Hopfield Networks are artificial neural networks trained using associative memory mechanisms, enabling them to recover memories even when "corrupted" by noise. These networks find applications in various domains such as pattern recognition and optimization problems.
 
+For a deeper understanding of Hopfield Networks, refer to the Wikipedia page on [Hopfield Networks](https://en.wikipedia.org/wiki/Hopfield_network).
 
-Read: https://en.wikipedia.org/wiki/Hopfield_network for more details
+One intriguing feature of these networks is the occurrence of a critical point as the number of stored patterns increases. Beyond this critical point, the network fails to recover patterns effectively, resembling phase transitions observed in magnetic systems. Extensive studies have been conducted on this behavior, as referenced in the following papers:
 
-One interesting aspect of this networks is that as you increase the number of patterns that you want to store (a.k.a the network to remember) there is a critical point when the networks suddenly starts to fail and can't recover the patterns anymore. This behavior is very similar to phase transitions in magnetic systems and has been studied extensivly, for reference see this two papers:
-
-1) Daniel Volk (1998): On the Phase Transition of Hopfield Networks — Another Monte Carlo Study
-
-2) Violla Folli et al (2016) On the maximum storage capacity of the Hopfield Model
-
+1. Daniel Volk (1998): "On the Phase Transition of Hopfield Networks — Another Monte Carlo Study"
+2. Violla Folli et al (2016): "On the maximum storage capacity of the Hopfield Model"
 
 ### Organization of the project
 
-The Hopfield Networks are constructed using the Julia Porgramming Language mainly for speed and simplicity. The code for running the simulations is in **run_sim_hopfield.jl**, I have already prepared a bash file **reproduce_results** that re-reuns all the simulations but I also pre-simulated and stored the siulation results in the **results folder** if you just want to see the analysis in the *analysis.ipynb** jupyter-notebook .
-
+Hopfield Networks are implemented using the Julia Programming Language, chosen for its speed and simplicity. The core code for running simulations is contained in **run_sim_hopfield.jl**. Additionally, a bash file named **reproduce_results** has been provided to facilitate rerunning all simulations. Alternatively, pre-simulated results are available in the **results folder** for direct analysis in the **analysis.ipynb** Jupyter notebook.
 
 
 ### Results
 
+To analyze the capacity of the Hopfield network, networks of size $N$ were trained with a varying number of memories $P$. The probability of recovery was then analyzed, representing the percentage of patterns correctly recovered. 
 
+In this analysis, the network was trained as a dynamical system where the correct memories act as fixed points of the system. However, as the number of memories increases, the fixed points become mixed up, leading to the appearance of cycles within the system.
+
+All these properties were analyzed as functions of the parameter $\alpha = \frac{P}{N} $, representing the ratio of memories to network size. This parameter allows for the examination of network behavior as the memory load relative to network capacity varies.
+
+
+![results](images/results_overlap.png)
 
