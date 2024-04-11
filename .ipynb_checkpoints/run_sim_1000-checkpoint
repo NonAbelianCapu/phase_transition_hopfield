@@ -1,6 +1,0 @@
-#!/bin/bash
-for P in {100..200}
-do
-   echo "Running sim $P"
-   julia run_sim_hopfield.jl 1000 $P 400 0.1 resultados/1000
-done
