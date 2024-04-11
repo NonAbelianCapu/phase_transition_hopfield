@@ -1,0 +1,44 @@
+#!/bin/bash
+
+for P in {50..100}
+do
+   echo "Running sim $P"
+   julia run_sim_hopfield.jl 500 $P 400 0.1 results/500
+done
+
+for P in {60..120}
+do
+   echo "Running sim $P"
+   julia run_sim_hopfield.jl 600 $P 400 0.1 results/600
+done
+
+for P in {70..140}
+do
+   echo "Running sim $P"
+   julia run_sim_hopfield.jl 700 $P 400 0.1 results/700
+done
+
+for P in {80..160}
+do
+   echo "Running sim $P"
+   julia run_sim_hopfield.jl 800 $P 400 0.1 results/800
+done
+
+for P in {90..180}
+do
+   echo "Running sim $P"
+   julia run_sim_hopfield.jl 900 $P 400 0.1 results/900
+done
+
+for P in {100..200}
+do
+   echo "Running sim $P"
+   julia run_sim_hopfield.jl 1000 $P 400 0.1 results/1000
+done
+
+for P in {200..400}
+
+do
+   echo "Running sim $P"
+   julia run_sim_hopfield.jl 2000 $P 400 0.1 results/2000
+done
